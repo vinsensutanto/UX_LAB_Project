@@ -19,7 +19,7 @@
         android:elevation="1dp"
         android:gravity="top|center_horizontal">
 
-        <!-- Judul -->
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

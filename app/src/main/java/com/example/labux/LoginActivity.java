@@ -26,10 +26,10 @@ public class LoginActivity extends AppCompatActivity {
         errorMessageTextView = findViewById(R.id.error_message);
         loginButton = findViewById(R.id.login_button);
 
-        // Kosongkan pesan error saat awal
+        // Empty error message at first
         errorMessageTextView.setText("");
 
-        // Event klik tombol login
+        // Event click login button
         loginButton.setOnClickListener(v -> validateLogin());
     }
 
@@ -44,11 +44,11 @@ public class LoginActivity extends AppCompatActivity {
         } else if (username.length() < 5 || username.length() > 10) {
             errorMessageTextView.setText("Username must be 5-10 characters.");
         } else {
-            // Valid: simpan username ke global dan arahkan ke halaman home
+            // Save username to global variable
             GlobalData.loggedInUsername = username;
             errorMessageTextView.setText("");
 
-            // Ganti ini dengan Activity home milikmu
+            // Redirect to MainActivity if success
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
