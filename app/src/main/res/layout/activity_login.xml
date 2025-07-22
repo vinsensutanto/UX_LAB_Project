@@ -101,10 +101,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log In"
-            android:textColor="#A22241"
+            android:textColor="@color/button_text_color"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:backgroundTint="#EAA121" />
+            android:backgroundTint="@color/button_background" />
 
         <!-- Logo AnimeDXD -->
         <ImageView
@@ -129,7 +129,7 @@
         android:layout_marginTop="30dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/naruto" />
+        android:src="@drawable/naruto_terbang" />
 
     <!-- Awan Image in Front -->
     <ImageView

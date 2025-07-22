@@ -20,10 +20,9 @@ public class MainActivity extends AppCompatActivity {
                 .findFragmentById(R.id.nav_host_fragment); // ID NavHostFragment di layout
         navController = navHostFragment.getNavController();
 
-        // Navigasi langsung ke HomeFragment jika ada extra
         String navigateTo = getIntent().getStringExtra("navigateTo");
-        if ("home".equals(navigateTo)) {
-            navController.navigate(R.id.homeFragment); // pastikan ID-nya sesuai nav_graph
+        if ("list".equals(navigateTo)) {
+            navController.navigate(R.id.listFragment);
         }
     }
 }
