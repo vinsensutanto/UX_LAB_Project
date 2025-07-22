@@ -2,7 +2,7 @@
     android:id="@+id/login_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDB924">
+    android:background="#EAA121">
 
 
     <!-- Red Rounded Box -->
@@ -24,10 +24,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hi! Please Log in to continue"
-            android:textColor="#FFC107"
-            android:textSize="18sp"
+            android:textColor="#EAA121"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="16dp" />
 
         <!-- Username -->
         <LinearLayout
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:text="Error Message"
             android:gravity="center"
-            android:textColor="#FFC107"
+            android:textColor="#F5C34A"
             android:textSize="14sp"
             android:layout_marginBottom="20dp"/>
 
@@ -103,6 +103,7 @@
             android:text="Log In"
             android:textColor="#A22241"
             android:textStyle="bold"
+            android:textSize="16sp"
             android:backgroundTint="#EAA121" />
 
         <!-- Logo AnimeDXD -->
