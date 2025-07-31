@@ -4,7 +4,17 @@
         <!-- default font -->
         <item name="android:fontFamily">@font/poppins_regular</item>
         <item name="fontFamily">@font/poppins_regular</item>
+
+        <!-- Make bottom nav item background transparent -->
+        <item name="bottomNavigationStyle">@style/CustomBottomNavigationView</item>
     </style>
 
     <style name="Theme.LabUX" parent="Base.Theme.LabUX" />
+
+    <!-- Custom style for BottomNavigationView -->
+<!--    <style name="CustomBottomNavigationView" parent="Widget.Material3.BottomNavigationView">-->
+<!--        <item name="android:background">@android:color/transparent</item>-->
+<!--        <item name="itemBackground">@android:color/transparent</item>-->
+<!--        <item name="itemRippleColor">@android:color/transparent</item>-->
+<!--    </style>-->
 </resources>

@@ -17,4 +17,10 @@
         android:label="List"
         tools:layout="@layout/fragment_list" />
 
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.labux.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+
 </navigation>

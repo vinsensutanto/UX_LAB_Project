@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Lab UX</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about_us_text">
+        <b>AnimeDXD, Your Ultimate Companion!</b><br/>
+        At AnimeDXD, we bring the vibrant worlds of anime and manga right to your fingertips.
+        Designed for passionate fans and curious newcomers alike, our mobile app offers a seamless and immersive experience where stories come to life.
+    </string>
+
+    <string name="features_text">
+        <b>Interactive Quizzes, Personalized Tracking, and More!</b><br/>
+        Stay engaged with dynamic quizzes, earn rewards, and track your anime journey.
+        Explore character databases, episode guides, and manga chapters – all in one app.
+    </string>
+
+    <string name="team_title"><u>THE TEAM</u></string>
+    <string name="team_text">
+        AnimeDXD is brought to life by a passionate trio of creators who share a deep love for anime, storytelling, and technology.
+    </string>
+    <string name="team_monica">• Monica Agustina Chandra (2702363582)</string>
+    <string name="team_jason">• Jason Amanda Henrico G. (2702363582)</string>
+    <string name="team_vincent">• Vincent Sutanto (2702363582)</string>
+
 </resources>
