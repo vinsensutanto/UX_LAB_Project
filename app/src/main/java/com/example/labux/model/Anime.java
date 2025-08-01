@@ -1,6 +1,8 @@
 package com.example.labux.model;
 
-public class Anime {
+import java.io.Serializable;
+
+public class Anime implements Serializable {
     private String title;
     private String genre;
     private String description;

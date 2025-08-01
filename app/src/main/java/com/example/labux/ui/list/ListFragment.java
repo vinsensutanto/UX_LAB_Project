@@ -1,5 +1,6 @@
 package com.example.labux.ui.list;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.labux.DetailActivity;
 import com.example.labux.R;
 import com.example.labux.adapters.AnimeListAdapter;
 import com.example.labux.data.AnimeRepository;
@@ -37,7 +39,12 @@ public class ListFragment extends Fragment {
 
         animeList = AnimeRepository.getAnimeList();
 
-        animeListAdapter = new AnimeListAdapter(getContext(), animeList);
+        animeListAdapter = new AnimeListAdapter(getContext(), animeList, anime -> {
+            Intent intent = new Intent(getContext(), DetailActivity.class);
+            intent.putExtra(DetailActivity.EXTRA_ANIME, anime);
+            startActivity(intent);
+        });
+
 
         recyclerView.setAdapter(animeListAdapter);
 

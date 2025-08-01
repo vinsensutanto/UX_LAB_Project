@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detailFragmentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/detailImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name" />
+
+    <ScrollView
+        android:id="@+id/detailScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Spacer -->
+            <View
+                android:id="@+id/topSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+
+            <!-- Gradient Overlay -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@drawable/bottom_box_top_gradient" />
+
+            <!-- Bottom Black Box -->
+            <LinearLayout
+                android:id="@+id/detailBottomBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FF000000"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/detailTitleBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="start" />
+
+                <TextView
+                    android:id="@+id/detailGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    android:gravity="start"
+                    android:layout_marginTop="4dp" />
+
+
+                <TextView
+                    android:id="@+id/detailDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:gravity="start"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Black Box -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF000000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_button_bg"
+                android:src="@drawable/ic_back"
+                android:scaleType="centerInside"
+                android:padding="8dp"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/detailPageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignTop="@id/backButton"
+                android:text="Detail Page"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detailPageTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="Subtitle"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Gradient BELOW the Black Box -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@drawable/top_gradient" />
+    </LinearLayout>
+
+    <!-- Floating Review Button -->
+    <ImageButton
+        android:id="@+id/fabReview"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:background="@drawable/round_button_bg"
+        android:src="@drawable/ic_post"
+        android:contentDescription="Post Review"
+        android:scaleType="centerInside"
+        android:padding="16dp"
+        android:elevation="10dp"
+        app:tint="#EAA121" />
+
+
+    <!-- Black Overlay with Review Form -->
+    <FrameLayout
+        android:id="@+id/reviewOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/reviewPopup"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/popup_background_review"
+            android:padding="24dp"
+            android:elevation="12dp"
+            android:gravity="center_horizontal">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Write a Review!"
+                android:textColor="#C02147"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- Divider under title -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C02147"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Feedback Message -->
+            <TextView
+                android:id="@+id/reviewMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Review must be filled in!"
+                android:gravity="center"
+                android:textColor="#F5C34A"
+                android:textStyle="italic"
+                android:textSize="10sp"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Write your opinion here:"
+                android:textColor="#C02147"
+                android:gravity="start"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Input -->
+            <EditText
+                android:id="@+id/reviewInput"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:hint="Click here to start typing"
+                android:textColorHint="#AAAAAA"
+                android:gravity="top"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:inputType="textMultiLine"
+                android:background="@drawable/review_edit_text_border"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Submit button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SUBMIT"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="@color/review_button_text"
+                android:background="@drawable/review_button_bg"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:layout_marginTop="16dp"
+                app:cornerRadius="0dp"
+                app:strokeWidth="0dp"
+                app:backgroundTint="@null"
+                app:rippleColor="@android:color/transparent" />
+
+        </LinearLayout>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/reviewSuccessMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_black_bg"
+        android:text="Review submitted!"
+        android:textColor="#F5C34A"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:visibility="gone"
+        android:elevation="12dp"
+        android:textAlignment="center" />
+
+</FrameLayout>

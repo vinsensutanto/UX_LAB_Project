@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
@@ -34,29 +35,34 @@ public class MainActivity extends AppCompatActivity {
         } else {
             username = loggedInUsername;
         }
+
         ImageButton menuButton = findViewById(R.id.menuButton);
 
         menuButton.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.CustomDialog);
-            View dialogView = getLayoutInflater().inflate(R.layout.popup_logout, null);
+            View dialogView = getLayoutInflater().inflate(R.layout.popup_logout, null); // inflate once
             builder.setView(dialogView);
 
             AlertDialog dialog = builder.create();
-            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // optional if background is already styled
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // optional
             dialog.show();
 
-            TextView logoutText = dialogView.findViewById(R.id.logoutText);
-            logoutText.setOnClickListener(view -> {
-                dialog.dismiss(); // close dialog
+            // ✅ Use dialogView instead of re-inflating
+            ImageButton logoutButton = dialogView.findViewById(R.id.logoutButton);
 
-                // Handle logout
-                Toast.makeText(MainActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
+            logoutButton.setOnClickListener(view -> {
+                dialog.dismiss(); // close the popup
+
+                // Optional: clear session
+                // getSharedPreferences("your_pref", MODE_PRIVATE).edit().clear().apply();
+
+                // Redirect to LoginActivity
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                finish(); // destroy current activity
             });
         });
-
 
         // 1. Get NavHostFragment AFTER setContentView
         NavHostFragment navHostFragment =
@@ -65,14 +71,14 @@ public class MainActivity extends AppCompatActivity {
         if (navHostFragment != null) {
             navController = navHostFragment.getNavController();
 
-            // 2. Setup BottomNavigationView AFTER navController is ready
+            // 2. Setup BottomNavigationView
             BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
             if (bottomNav != null) {
                 NavigationUI.setupWithNavController(bottomNav, navController);
                 bottomNav.setItemBackground(null);
             }
 
-            // 3. Handle intent-based navigation
+            // 3. Handle navigation intent
             String navigateTo = getIntent().getStringExtra("navigateTo");
             if ("list".equals(navigateTo)) {
                 navController.navigate(R.id.listFragment);
@@ -80,16 +86,14 @@ public class MainActivity extends AppCompatActivity {
                     bottomNav.setSelectedItemId(R.id.listFragment);
                 }
             }
+
             TextView welcomeText = findViewById(R.id.welcomeText);
-
-
-
             String styledText = "<font color='#F5C34A'><small>Welcome,</small></font><br>" +
                     "<font color='#9C1126'><big><big><i>" + username + "</i></big></big></font>";
             welcomeText.setText(Html.fromHtml(styledText, Html.FROM_HTML_MODE_LEGACY));
         } else {
-            // Optional: log error if navHostFragment is null
-            android.util.Log.e("MainActivity", "NavHostFragment not found in layout");
+            Log.e("MainActivity", "NavHostFragment not found in layout");
         }
     }
+
 }
