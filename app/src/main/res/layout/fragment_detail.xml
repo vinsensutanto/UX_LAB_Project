@@ -50,7 +50,7 @@
                     android:id="@+id/detailTitleBottom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#F5C34A"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:gravity="start" />
@@ -59,7 +59,7 @@
                     android:id="@+id/detailGenre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#C02147"
                     android:textSize="16sp"
                     android:textStyle="italic"
                     android:gravity="start"
@@ -70,7 +70,7 @@
                     android:id="@+id/detailDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#D89000"
                     android:textSize="14sp"
                     android:gravity="start"
                     android:layout_marginTop="8dp" />
@@ -104,7 +104,7 @@
                 android:src="@drawable/ic_back"
                 android:scaleType="centerInside"
                 android:padding="8dp"
-                app:tint="@color/white" />
+                app:tint="#D89000" />
 
             <TextView
                 android:id="@+id/detailPageTitle"
@@ -114,7 +114,7 @@
                 android:layout_alignTop="@id/backButton"
                 android:text="Detail Page"
                 android:textSize="20sp"
-                android:textColor="#FFFFFF"
+                android:textColor="#F5C34A"
                 android:textStyle="bold" />
 
             <TextView
@@ -125,7 +125,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="2dp"
                 android:text="Subtitle"
-                android:textColor="#FFFFFF"
+                android:textColor="#EAA121"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </RelativeLayout>
