@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:maxHeight="280dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/rounded_white"
+    android:elevation="6dp">
+
+    <!-- Gambar di kiri -->
+    <ImageView
+        android:id="@+id/imageAnime"
+        android:layout_width="150dp"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kaijuu"
+        android:background="@drawable/rounded_img"
+        android:clipToOutline="true" />
+
+    <!-- Bagian teks di kanan -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/textAnime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kaijuu No. 8"
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kaiju No. 8 Season 2 Confirms Release Date With A Brand New Key Visual"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kaiju No. 8 Season 2 gets its much-awaited release date along with a new promotional key visual..."
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="3dp"
+            android:ellipsize="end"
+            android:maxLines="4" />
+
+    </LinearLayout>
+</LinearLayout>

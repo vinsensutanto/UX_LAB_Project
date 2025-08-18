@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Carousel 1 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerCarousel"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Carousel 2 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerCarousel2"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+</LinearLayout>
