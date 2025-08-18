@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:orientation="vertical"
+    android:background="#450000"
+    android:padding="8dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Tab Control pakai Button -->
+    <LinearLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/btnNews"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="NEWS"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnManga"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MANGA"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- RecyclerView untuk Manga -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewManga"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        android:visibility="gone"/>
+
+    <!-- Container untuk Carousel (News) -->
+    <TextView
+        android:id="@+id/sectionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SEASONAL ANIME"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:textColor="#FFB300"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/carouselContainer"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/sectionTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="MOVIE ANIME"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:textColor="#FFB300"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/carouselContainer2"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:visibility="visible"/>
+</LinearLayout>
