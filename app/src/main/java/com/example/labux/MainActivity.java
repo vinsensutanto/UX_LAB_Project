@@ -7,7 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -40,29 +43,33 @@ public class MainActivity extends AppCompatActivity {
 
         menuButton.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.CustomDialog);
-            View dialogView = getLayoutInflater().inflate(R.layout.popup_logout, null); // inflate once
+            View dialogView = getLayoutInflater().inflate(R.layout.popup_logout, null);
             builder.setView(dialogView);
 
             AlertDialog dialog = builder.create();
-            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // optional
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
             dialog.show();
 
-            // ✅ Use dialogView instead of re-inflating
+            // Move to top right
+            Window window = dialog.getWindow();
+            if (window != null) {
+                WindowManager.LayoutParams params = window.getAttributes();
+                params.gravity = Gravity.TOP | Gravity.END; // top right corner
+                params.x = 100; // margin from right (pixels)
+                params.y = 100; // margin from top (pixels)
+                window.setAttributes(params);
+            }
+
             ImageButton logoutButton = dialogView.findViewById(R.id.logoutButton);
-
             logoutButton.setOnClickListener(view -> {
-                dialog.dismiss(); // close the popup
-
-                // Optional: clear session
-                // getSharedPreferences("your_pref", MODE_PRIVATE).edit().clear().apply();
-
-                // Redirect to LoginActivity
+                dialog.dismiss();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish(); // destroy current activity
+                finish();
             });
         });
+
 
         // 1. Get NavHostFragment AFTER setContentView
         NavHostFragment navHostFragment =
