@@ -25,6 +25,8 @@ public class HomeFragment extends Fragment {
 
     private Button btnNews, btnManga;
     private FrameLayout carouselContainer;
+
+    private androidx.core.widget.NestedScrollView newsScrollView;
     private RecyclerView recyclerViewManga;
     private AnimeAdapter adapter;
     private List<Anime> animeList;
@@ -50,6 +52,8 @@ public class HomeFragment extends Fragment {
         carouselContainer2 = view.findViewById(R.id.carouselContainer2);
         sectionTitle = view.findViewById(R.id.sectionTitle);
         sectionTitle2 = view.findViewById(R.id.sectionTitle2);
+        newsScrollView = view.findViewById(R.id.newsScrollView);
+
         // <<< Tambahan
 
         // Setup RecyclerView MANGA
@@ -89,6 +93,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void showNewsTab() {
+        if (newsScrollView != null) newsScrollView.setVisibility(View.VISIBLE);
         carouselContainer.setVisibility(View.VISIBLE);
         recyclerViewManga.setVisibility(View.GONE);
 
@@ -112,6 +117,7 @@ public class HomeFragment extends Fragment {
 
 
     private void showMangaTab() {
+        if (newsScrollView != null) newsScrollView.setVisibility(View.GONE);
         carouselContainer.setVisibility(View.GONE);
         recyclerViewManga.setVisibility(View.VISIBLE);
 

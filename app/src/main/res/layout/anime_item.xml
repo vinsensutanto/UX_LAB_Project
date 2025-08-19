@@ -52,7 +52,7 @@
                     android:text="Title"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="#9C1126"/>
+                    android:textColor="#D32F2F"/>
 
                 <TextView
                     android:id="@+id/animeGenre"
