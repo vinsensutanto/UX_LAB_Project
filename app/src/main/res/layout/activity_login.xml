@@ -1,146 +1,151 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/login_root"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="#EAA121">
 
-
-    <!-- Red Rounded Box -->
     <LinearLayout
-        android:id="@+id/loginContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/imageNaruto"
-        android:orientation="vertical"
-        android:background="@drawable/rounded_top_red"
-        android:paddingTop="40dp"
-        android:paddingBottom="32dp"
-        android:paddingHorizontal="24dp"
-        android:elevation="1dp"
-        android:gravity="top|center_horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <!-- Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hi! Please Log in to continue"
-            android:textColor="#EAA121"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Username -->
-        <LinearLayout
+        <!-- Naruto + Awan jadi satu tumpukan -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/rounded_white"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
+            <!-- Naruto Image -->
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_user"
-                android:layout_marginEnd="8dp" />
+                android:id="@+id/imageNaruto"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/naruto_terbang" />
 
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:hint="Username"
-                android:inputType="text"
-                android:textSize="12sp"
-                android:gravity="center_vertical" />
-        </LinearLayout>
-
-        <!-- Password -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/rounded_white"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp">
-
+            <!-- Awan Image -->
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_lock"
-                android:layout_marginEnd="8dp" />
+                android:id="@+id/imageAwan"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/awan" />
+        </FrameLayout>
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textSize="12sp"
-                android:gravity="center_vertical" />
+        <!-- Red Rounded Box -->
+        <LinearLayout
+            android:id="@+id/loginContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_top_red"
+            android:paddingTop="20dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="24dp"
+            android:elevation="1dp"
+            android:gravity="top|center_horizontal">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi! Please Log in to continue"
+                android:textColor="#EAA121"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Username -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_white"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_user"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Username"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_white"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_lock"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/error_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Error Message"
+                android:gravity="center"
+                android:textColor="#F5C34A"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log In"
+                android:textColor="@color/button_text_color"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="@color/button_background" />
+
+            <!-- Logo AnimeDXD -->
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logoanimedxd" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/error_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Error Message"
-            android:gravity="center"
-            android:textColor="#F5C34A"
-            android:textSize="14sp"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- Login Button -->
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Log In"
-            android:textColor="@color/button_text_color"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:backgroundTint="@color/button_background" />
-
-        <!-- Logo AnimeDXD -->
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logoanimedxd" />
     </LinearLayout>
-
-    <!-- Naruto Image -->
-    <ImageView
-        android:id="@+id/imageNaruto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-120dp"
-        android:layout_marginTop="30dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/naruto_terbang" />
-
-    <!-- Awan Image in Front -->
-    <ImageView
-        android:id="@+id/imageAwan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/imageNaruto"
-        android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:translationY="10dp"
-        android:elevation="10dp"
-        android:src="@drawable/awan" />
-</RelativeLayout>
+</ScrollView>
