@@ -41,23 +41,23 @@
             android:id="@+id/loginContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@drawable/rounded_top_red"
-            android:paddingTop="20dp"
-            android:paddingBottom="0dp"
-            android:paddingHorizontal="24dp"
             android:elevation="1dp"
-            android:gravity="top|center_horizontal">
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="0dp">
 
             <!-- Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:text="Hi! Please Log in to continue"
                 android:textColor="#EAA121"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
+                android:textStyle="bold" />
 
             <!-- Username -->
             <LinearLayout
@@ -65,15 +65,15 @@
                 android:layout_height="40dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/rounded_white"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="12dp">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_user"
-                    android:layout_marginEnd="8dp" />
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_user" />
 
                 <EditText
                     android:id="@+id/username"
@@ -81,27 +81,27 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
                     android:hint="Username"
                     android:inputType="text"
-                    android:textSize="12sp"
-                    android:gravity="center_vertical" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- Password -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/rounded_white"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="12dp">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_lock"
-                    android:layout_marginEnd="8dp" />
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_lock" />
 
                 <EditText
                     android:id="@+id/password"
@@ -109,32 +109,32 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:textSize="12sp"
-                    android:gravity="center_vertical" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/error_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Error Message"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
+                android:text="Error Message"
                 android:textColor="#F5C34A"
-                android:textSize="14sp"
-                android:layout_marginBottom="20dp"/>
+                android:textSize="14sp" />
 
             <!-- Login Button -->
             <Button
                 android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/button_background"
                 android:text="Log In"
                 android:textColor="@color/button_text_color"
-                android:textStyle="bold"
                 android:textSize="16sp"
-                android:backgroundTint="@color/button_background" />
+                android:textStyle="bold" />
 
             <!-- Logo AnimeDXD -->
             <ImageView
