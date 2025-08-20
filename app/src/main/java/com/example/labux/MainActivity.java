@@ -94,10 +94,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            TextView welcomeText = findViewById(R.id.welcomeText);
-            String styledText = "<font color='#F5C34A'><small>Welcome,</small></font><br>" +
-                    "<font color='#9C1126'><big><big><i>" + username + "</i></big></big></font>";
-            welcomeText.setText(Html.fromHtml(styledText, Html.FROM_HTML_MODE_LEGACY));
+//            TextView welcomeText = findViewById(R.id.welcomeText);
+//            String styledText = "<font color='#F5C34A'><small>Welcome,</small></font><br>" +
+//                    "<font color='#9C1126'><big><big><i>" + username + "</i></big></big></font>";
+//            welcomeText.setText(Html.fromHtml(styledText, Html.FROM_HTML_MODE_LEGACY));
+
+            navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+                TextView welcomeText = findViewById(R.id.welcomeText);
+                if (destination.getId() == R.id.listFragment) {
+                    // Style untuk AnimeDXD List
+                    String styledText = "<font color='#EAA121'><b><big>AnimeDXD List</big></b></font>";
+                    welcomeText.setText(Html.fromHtml(styledText, Html.FROM_HTML_MODE_LEGACY));
+                } else {
+                    // Style untuk welcome username
+                    String styledText = "<font color='#F5C34A'><small>Welcome,</small></font><br>" +
+                            "<font color='#9C1126'><big><big><i>" + username + "</i></big></big></font>";
+                    welcomeText.setText(Html.fromHtml(styledText, Html.FROM_HTML_MODE_LEGACY));
+                }
+            });
+
         } else {
             Log.e("MainActivity", "NavHostFragment not found in layout");
         }
